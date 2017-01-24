@@ -4,10 +4,7 @@
   "description": "set default query params, and merge with queries on client requests",
   "main": "index.js",
   "dependencies": {
-    "bytes": "^2.4.0",
-    "express": "^4.14.0",
-    "lodash": "^4.17.4",
-    "qs": "^6.3.0"
+    "lodash": "^4.17.4"
   },
   "devDependencies": {},
   "scripts": {
