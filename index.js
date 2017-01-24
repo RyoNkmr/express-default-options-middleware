@@ -14,12 +14,10 @@ module.exports = function(options) {
   var opts = options || {};
 
   return function expressDefaultOptionsMiddleware(req, res, next) {
-    var query = _.defaultsDeep(req.query, opts);
-    console.log(query, opts, req.query);
-    if(Object.keys(query).length === 0) {
-      return next();
-    }
-    req.query = query;
+    var query = _.defaultsDeep({}, req.query, opts);
+    req.query = _.mapValues(query, function(val, key){
+      return JSON.stringify(val);
+    });
     return next();
   };
 };
