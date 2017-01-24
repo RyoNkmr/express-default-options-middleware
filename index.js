@@ -15,7 +15,7 @@ module.exports = function(options) {
 
   return function expressDefaultOptionsMiddleware(req, res, next) {
     var query = _.defaultsDeep(req.query, opts);
-    console.log(query);
+    console.log(query, opts, req.query);
     if(Object.keys(query).length === 0) {
       return next();
     }
